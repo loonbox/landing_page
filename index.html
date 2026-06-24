@@ -537,8 +537,8 @@
   <div class="klaviyo-form-wrapper">
     <!-- Placeholder inline form — wire to your Klaviyo list ID when ready -->
     <div class="inline-form">
-      <input type="email" placeholder="your@email.com" aria-label="Email address" />
-      <button type="button" onclick="handleSubscribe(this)">Get on the list</button>
+      <input id="sd-email" type="email" placeholder="your@email.com" aria-label="Email address" />
+      <button id="sd-btn" type="button" onclick="handleSubscribe()">Get on the list</button>
     </div>
     <p class="form-note">No spam. One email to confirm your spot.</p>
   </div>
@@ -553,23 +553,21 @@
 </footer>
 
 <script>
-  // Placeholder subscribe handler — replace with Klaviyo list subscribe call
-  function handleSubscribe(btn) {
-    const input = btn.previousElementSibling;
-    const email = input.value.trim();
-    if (!email || !email.includes('@')) {
+  function handleSubscribe() {
+    var input = document.getElementById('sd-email');
+    var btn   = document.getElementById('sd-btn');
+    var email = input.value.trim();
+
+    if (!email) {
+      input.style.outline = '2px solid #C8402B';
       input.focus();
       return;
     }
 
-    // Example Klaviyo identify + track call:
-    // window.klaviyo.push(['identify', { $email: email }]);
-    // window.klaviyo.push(['track', 'Waitlist Signup', { email }]);
-
-    btn.textContent = 'You\'re on the list ✓';
+    input.style.outline = '';
+    btn.textContent = "You're on the list ✓";
     btn.disabled = true;
     input.disabled = true;
-    input.value = email;
   }
 </script>
 
