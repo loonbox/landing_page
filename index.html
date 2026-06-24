@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Send Desk — Email & SMS Marketing for Local Businesses</title>
+
+  <!-- ─── Klaviyo ──────────────────────────────────────────── -->
+  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/SGd9Sf/klaviyo.js?company_id=SGd9Sf'></script>
+  <script type="text/javascript">
+    !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  </script>
+  <!-- ─────────────────────────────────────────────────────── -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Tokens ──────────────────────────────────────────── */
+    :root {
+      --ink:      #141414;
+      --paper:    #F7F4EF;
+      --cream:    #EDE9E1;
+      --rule:     #D6D1C8;
+      --accent:   #C8402B;   /* deep red — postmark energy */
+      --accent-lt:#F2EAE8;
+      --mid:      #6B6660;
+      --white:    #FFFFFF;
+
+      --serif:   'DM Serif Display', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+
+      --max:     1100px;
+      --radius:  4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--accent); }
+    nav a.cta-sm {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+    nav a.cta-sm:hover { opacity: .85; }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 96px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-copy {}
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 3px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 440px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+    .btn-primary:hover { opacity: .85; }
+    .btn-ghost {
+      display: inline-block;
+      color: var(--ink);
+      font-weight: 400;
+      font-size: 0.9rem;
+      padding: 14px 20px;
+      text-decoration: none;
+      opacity: .65;
+      transition: opacity .15s;
+    }
+    .btn-ghost:hover { opacity: 1; }
+
+    /* stamp card */
+    .hero-stamp {
+      background: var(--cream);
+      border: 1.5px solid var(--rule);
+      border-radius: 6px;
+      padding: 36px 32px;
+      position: relative;
+    }
+    .stamp-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+    .stamp-stat {
+      font-family: var(--serif);
+      font-size: 3.6rem;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .stamp-stat-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-top: 6px;
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+    .stamp-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 24px;
+    }
+    .stamp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .stamp-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .stamp-item p {
+      font-size: 0.87rem;
+      color: var(--mid);
+      font-weight: 300;
+    }
+    .stamp-item strong { color: var(--ink); font-weight: 500; }
+
+    /* postmark accent */
+    .postmark {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2.5px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .18;
+    }
+    .postmark svg { width: 28px; height: 28px; fill: var(--accent); }
+
+    /* ── Divider ─────────────────────────────────────────── */
+    .full-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── Services ───────────────────────────────────────── */
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-head {
+      margin-bottom: 52px;
+    }
+    .section-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-top: 12px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 28px 24px 32px;
+    }
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-lt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .card-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── How it works ────────────────────────────────────── */
+    .how-bg {
+      background: var(--ink);
+      color: var(--white);
+    }
+    .how-bg .section-head h2 { color: var(--white); }
+    .how-bg .eyebrow { color: var(--accent); border-color: var(--accent); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .step {}
+    .step-num {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+      opacity: .5;
+    }
+    .step h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,.5);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── CTA / Form ───────────────────────────────────────── */
+    .cta-block {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 100px 24px;
+      text-align: center;
+    }
+    .cta-block h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .cta-block p {
+      font-size: 1rem;
+      color: var(--mid);
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    /* Klaviyo embed placeholder */
+    .klaviyo-form-wrapper {
+      text-align: left;
+    }
+    /* Inline form fallback if Klaviyo embed not yet configured */
+    .inline-form {
+      display: flex;
+      gap: 0;
+      border: 1.5px solid var(--rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .inline-form input[type="email"] {
+      flex: 1;
+      padding: 14px 16px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+    }
+    .inline-form input[type="email"]::placeholder { color: var(--mid); opacity: .6; }
+    .inline-form button {
+      padding: 14px 22px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s;
+      white-space: nowrap;
+    }
+    .inline-form button:hover { opacity: .85; }
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--mid);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p {
+      font-size: 0.78rem;
+      color: var(--mid);
+    }
+    footer a { color: var(--mid); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .steps { grid-template-columns: 1fr; }
+      .inline-form { flex-direction: column; }
+      .inline-form button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="#">The Send<span>Desk</span></a>
+    <a class="cta-sm" href="https://calendly.com/studio-douglastitus/30min" target="_blank" rel="noopener">Book a Free Call</a>
+  </div>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Grand Rapids, MI</span>
+    <h1>Keep the customers you <em>already</em> earned.</h1>
+    <p class="hero-sub">Email and SMS retention marketing for restaurants, breweries, salons, and local businesses — done for you, every month.</p>
+    <a class="btn-primary" href="https://calendly.com/studio-douglastitus/30min" target="_blank" rel="noopener">Book a Free Retention Audit</a>
+    <a class="btn-ghost" href="mailto:hello@thesenddesk.com">Or email us →</a>
+  </div>
+
+  <div class="hero-stamp">
+    <div class="postmark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </div>
+    <p class="stamp-label">Why retention pays</p>
+    <div class="stamp-stat">5×</div>
+    <p class="stamp-stat-desc">cheaper to keep a customer than win a new one</p>
+    <hr class="stamp-divider" />
+    <div class="stamp-item">
+      <div class="stamp-dot"></div>
+      <p><strong>Email + SMS flows</strong> built and launched in your first month</p>
+    </div>
+    <div class="stamp-item">
+      <div class="stamp-dot"></div>
+      <p><strong>No long-term contracts</strong> — month-to-month, cancel anytime</p>
+    </div>
+    <div class="stamp-item">
+      <div class="stamp-dot"></div>
+      <p><strong>Flat monthly rate</strong> — $247/mo after a one-time $225 setup</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule" />
+
+<!-- ── Services ──────────────────────────────────────── -->
+<div class="section">
+  <div class="section-head">
+    <span class="eyebrow">What we do</span>
+    <h2>Three things, done right.</h2>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-icon">
+        <!-- envelope icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Email Campaigns</h3>
+      <p>Monthly promotional emails written, designed, and sent on your behalf. On-brand copy, clean layouts, and subject lines worth opening.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <!-- message icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <h3>SMS Marketing</h3>
+      <p>Short, punchy text messages that drive real visits — flash specials, loyalty rewards, and birthday campaigns. TCPA-compliant from day one.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <!-- refresh icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+      </div>
+      <h3>Automated Flows</h3>
+      <p>Set-it-and-forget-it sequences that bring lapsed customers back — win-back emails, post-visit follow-ups, and reorder reminders.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── How it works ───────────────────────────────────── -->
+<div class="how-bg">
+  <div class="section">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Up and running in two weeks.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Free Audit</h3>
+        <p>We look at your current list, tools, and missed revenue. You get a clear picture of what you're leaving on the table.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Setup</h3>
+        <p>We build your email list, configure automations, and get SMS opt-ins going — all handled for you, one time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Monthly Sends</h3>
+        <p>Campaigns go out every month. You review and approve, we handle the rest. No software to learn.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Results</h3>
+        <p>Track open rates, clicks, and revenue attributed directly to your sends. Real numbers, every month.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<div class="cta-block">
+  <span class="eyebrow">Get started</span>
+  <h2>Ready to stop losing regulars?</h2>
+  <p>Join the waitlist and we'll reach out to schedule your free retention audit — no commitment, no pitch deck.</p>
+
+  <!-- Klaviyo embedded form goes here.
+       Replace the div below with a Klaviyo embed code (e.g. klaviyo.openForm('FORM_ID'))
+       or drop in a Klaviyo-generated embed snippet. -->
+  <div class="klaviyo-form-wrapper">
+    <!-- Placeholder inline form — wire to your Klaviyo list ID when ready -->
+    <div class="inline-form">
+      <input type="email" placeholder="your@email.com" aria-label="Email address" />
+      <button type="button" onclick="handleSubscribe(this)">Get on the list</button>
+    </div>
+    <p class="form-note">No spam. One email to confirm your spot.</p>
+  </div>
+</div>
+
+<!-- ── Footer ────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2025 The Send Desk · Grand Rapids, MI</p>
+    <p><a href="mailto:hello@thesenddesk.com">hello@thesenddesk.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // Placeholder subscribe handler — replace with Klaviyo list subscribe call
+  function handleSubscribe(btn) {
+    const input = btn.previousElementSibling;
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) {
+      input.focus();
+      return;
+    }
+
+    // Example Klaviyo identify + track call:
+    // window.klaviyo.push(['identify', { $email: email }]);
+    // window.klaviyo.push(['track', 'Waitlist Signup', { email }]);
+
+    btn.textContent = 'You\'re on the list ✓';
+    btn.disabled = true;
+    input.disabled = true;
+    input.value = email;
+  }
+</script>
+
+</body>
+</html>
